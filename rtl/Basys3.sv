@@ -68,7 +68,10 @@ module Basys3 (
         .rst_n_o(rst_n)
     );
 
-    assign gpioa = led;
+    // assign gpioa = led;
+    // use bottom 8 leds to debug
+    // THis shows deserialized data output from PS2 controller
+    assign gpioa = {led[15:8],8'h0};
     assign gpiob = sw;
     assign gpioc[7:0] = JA;
     assign gpioc[11:8] = JB[3:0];
@@ -92,6 +95,14 @@ module Basys3 (
         .uart0_tx(RxTx)
     );
 
+    ps2_controller PS2 (
+        .clk(core_clk),
+        .rst_n(rst_n),
+        .valid(),
+        .ps2_clk(PS2Clk),
+        .ps2_data(PS2Data),
+        .data(led[7:0])
+    );
 
     logic feedback_clk;
     logic pll_locked;
