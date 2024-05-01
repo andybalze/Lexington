@@ -8,7 +8,7 @@ module ps2_controller #(
     input logic ps2_data,     // PS/2 data input
 
     // Outputs
-    output data[7:0] data,          // Data received from PS/2 controller
+    output logic [7:0] data,          // Data received from PS/2 controller
     output logic valid,             // Asserted when data is valid
     output logic err                // Asserted when error is detected
 );
@@ -41,7 +41,21 @@ module ps2_controller #(
 
     // PS/2 controller logic
     // TODO: Implement PS/2 controller functionality here
+    // For example, decode PS/2 data and detect key presses
 
+    // Example: Detect if 'A' key is being held down
+    // (Assuming ASCII value for 'A' is 0x41)
+    logic a_key_held;
+    always_comb begin
+        a_key_held = (ps2_data == 8'h41);
+    end
+
+    // Example: Drive LEDs based on key press
+    // (Assuming LEDs are connected to some output signals)
+    assign led_a = a_key_held;  // Drive LED for 'A' key
+
+    // Add other PS/2 controller logic here
+    // ...
 
 endmodule
 
