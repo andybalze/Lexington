@@ -3,7 +3,7 @@
 APP_SRC ?= $(wildcard ./*.c) $(wildcard ./*.cpp) $(wildcard ./*.s) $(wildcard ./*.S)
 
 # Compiler toolchain
-RISCV_PREFIX ?= riscv32-unknown-elf-
+RISCV_PREFIX ?= riscv64-unknown-elf-
 
 # CPU architecture and ABI
 MARCH ?= rv32i_zicsr
