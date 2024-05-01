@@ -99,14 +99,14 @@ mkdir -p "${PROJ_DIR}/build/implement"
 cd "${PROJ_DIR}/build/implement"
 
 # Compile software
-bash -c "cd ${SW_PROJ_DIR}/$proj && make build dump" | $OUT_FORMAT
-rval=$PIPESTATUS
-if [ "$rval" != "0" ];then
-    >&2 echo -e "${RED}FAIL: Software project compilation failed with exit code $rval"
-    >&2 echo
-    exit $rval
-fi
-cp "${SW_PROJ_DIR}/$proj/rom.hex" .
+#bash -c "cd ${SW_PROJ_DIR}/$proj && make build dump" | $OUT_FORMAT
+#rval=$PIPESTATUS
+#if [ "$rval" != "0" ];then
+#    >&2 echo -e "${RED}FAIL: Software project compilation failed with exit code $rval"
+#    >&2 echo
+#    exit $rval
+#fi
+#cp "${SW_PROJ_DIR}/$proj/rom.hex" .
 
 # Execute macro commands
 exec_macro_cmds "$top"
