@@ -1,6 +1,6 @@
 #include "lexington.h"
 
-// #define MAX_COUNT   1000000
+#define MAX_COUNT   1000000
 #define BLINK_DELAY     500
 
 
