@@ -42,7 +42,7 @@ module uart_rx #(
     end
 
 
-    // TX Engine
+    // RX Engine
     logic _err; // shadow error
     logic [7:0] _din; // shadow data
     integer bit_idx;
